@@ -6,11 +6,10 @@
         display: block;
     }
 
-    /* Center-align jumbotron text */
-    .jumbotron h1,
-    .jumbotron h2,
-    .jumbotron h3 {
+    /* Center-align jumbo r tron text */
+    .jumbotron {
         text-align: center;
+       order: 1;
     }
 
     /* Stack elements vertically in filter-bar */
