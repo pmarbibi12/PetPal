@@ -4,7 +4,6 @@
 
     /* Reset container's max-width for full-width layout */
     .container {
-        max-width: 100%;
         display: block;
     }
 
@@ -51,7 +50,7 @@
         left: 0;
         width: 100%;
         padding: 20px;
-        background-color: rgba(0, 0, 0, 0.8); /* Add a semi-transparent background for better visibility */
+        background-color: rgba(0, 0, 0, 0); /* Add a semi-transparent background for better visibility */
         color: #fff; /* White text color */
         text-align: center;
     }
