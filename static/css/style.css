@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+/* Adjustments for mobile devices */
 @media (max-width: 768px) {
-    /* Adjustments for mobile devices */
-
     /* Reset container's max-width for full-width layout */
     .container {
         display: block;
@@ -32,33 +31,10 @@
     }
 
     /* Full width for left-column and results sections */
-
+    .left-column,
     #results {
         width: 100%;
         margin: 10px 0;
-    }
-
-    /* Adjust fact-panel styles for better spacing */
-    .fact-panel {
-        margin-bottom: 20px;
-    }
-
-    /* Center-align social-media icons */
-    .social-media {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background-color: rgba(0, 0, 0, 0); /* Add a semi-transparent background for better visibility */
-        color: #fff; /* White text color */
-        text-align: center;
-    }
-
-
-    .left-column {
-        width: 100%;
-        order: 1; /* Change order to stack above results */
     }
 
     /* Stack image-section above facts-section within result-box */
@@ -73,10 +49,30 @@
         order: 2; /* Change order to stack image-section above facts-section */
     }
 
-    /* Adjust spacing for result-box */
-    
+    /* Stack sections according to the specified order */
+    .social-media {
+        order: 2; /* Move social media after Jumbotron */
+    }
 
-    /* Adjust facts-section padding */
+    .info-bar {
+        order: 3; /* Move Info bar after social media */
+    }
+
+    .filter-bar {
+        order: 4; /* Keep Filter bar as it is */
+    }
+
+    .left-column {
+        order: 5; /* Keep Left column as it is */
+    }
+
+    #results {
+        order: 6; /* Keep Results as it is */
+    }
+
+    .sticky {
+        order: 7; /* Keep Ready to adopt as it is */
+    }
 
     /* Center-align adopt-here section */
     #adopt-here {
