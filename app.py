@@ -5,6 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import datetime
 from sqlalchemy.orm import Session
+from hashlib import md5
 
 app = Flask(__name__)
 
@@ -12,6 +13,17 @@ app = Flask(__name__)
 DATABASE_URL = 'sqlite:///adopt_me.db'
 engine = create_engine(DATABASE_URL)
 Base = declarative_base()
+
+def has_image_content(url):
+    try:
+        response = requests.get(url, allow_redirects=True)
+        
+        if not response.url.endswith("no_pic_d.jpg"):
+            return True
+        
+        return False
+    except requests.RequestException:
+        return False
 
 # Define your SQLAlchemy model
 class RowData(Base):
@@ -28,6 +40,7 @@ class RowData(Base):
     link = Column(String)
     color = Column(String)
     breed = Column(String)
+    has_image = Column(String)
 
 Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
@@ -56,12 +69,10 @@ for item in data['data']:
     link_list = item[columns.index("URL Link ")]
     color = item[columns.index("Color")]
     breed =  item[columns.index("Breed")]
-    if link_list :
-        link = str(link_list[0])  # Take the first URL if available
-    else:
-        link = None  # Set to None if the list is empty
+    link = str(link_list[0])  # Take the first URL if available
+    has_image = str(has_image_content(link_list[0]))
 
-    row = RowData(animal_id=animal_id, name=name, in_date=in_date, age=age, animal_type=animal_type, intake_type=intake_type,  size=size, sex=sex , link=link, color=color, breed=breed)
+    row = RowData(animal_id=animal_id, name=name, in_date=in_date, age=age, animal_type=animal_type, intake_type=intake_type,  size=size, sex=sex , link=link, color=color, breed=breed, has_image=has_image)
     session.add(row)
     session.commit()
 session.close()
@@ -88,7 +99,8 @@ def get_data():
             "sex": row.sex,
             "color": row.color,
             "breed": row.breed,
-            "link": row.link
+            "link": row.link,
+            "hasImage": row.has_image
             
         }
         results_list.append(row_dict)

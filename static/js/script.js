@@ -46,10 +46,31 @@ function displayResults(results, page) {
             .attr("class", "image-section");
 
         // Create an image element within the image section
-        imageSection.append("img")
-            .attr("src", result.link)
-            .attr("alt", "Image");
-
+        if (result.hasImage == "True") {
+            imageSection.append("img")
+                .attr("src", result.link)
+                .attr("alt", "Image");
+        }
+        else if (result.animal_type == "DOG"){
+            imageSection.append("img")
+                .attr("src", "https://cdn4.iconfinder.com/data/icons/dog-breed-minimal-outline/512/Golden_retriever-512.png")
+                .attr("alt", "Image");
+        }
+        else if (result.animal_type == "CAT"){
+            imageSection.append("img")
+                .attr("src", "https://cdn2.iconfinder.com/data/icons/veterinary-line-fluffy-pet/512/Cat-512.png")
+                .attr("alt", "Image");
+        }
+        else if (result.animal_type == "OTHER"){
+            imageSection.append("img")
+                .attr("src", "https://cdn2.iconfinder.com/data/icons/veterinary-line-fluffy-pet/512/Hamster-512.png")
+                .attr("alt", "Image");
+        }
+        else if (result.animal_type == "LIVESTOCK"){
+            imageSection.append("img")
+                .attr("src", "https://cdn4.iconfinder.com/data/icons/zoo-line-welcome-to-zootopia/512/goat-512.png")
+                .attr("alt", "Image");
+        }
         // Create a div for the facts section
         let factsSection = resultBox.append("div")
             .attr("class", "facts-section");

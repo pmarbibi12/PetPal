@@ -96,6 +96,11 @@
     }
 }
 
+
+.jumbotron {
+    background-color: rgb(43, 107, 98) !important;
+}
+
 h1 {
     color: #c9899d;
     font-family: "Comfortaa", cursive;
@@ -107,18 +112,51 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    color: #78c5bc;
+    font-family: "Comfortaa", cursive;
+}
+
+.container {
+    max-width: 1280px;
+    align-items: center;
+  }
+
+
+#info-bar {
+    align-content: center;
+}
+
+
+
 .filter-bar {
     display: flex;
     border: 1px solid #ccc;
     border-radius: 30px;
     padding: 15px;
-    align-content: center;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     font-family: "Comfortaa", cursive;
     font-size: 18px;
     margin-bottom: 20px;
+}
+
+.dropdown {
+    color: #78c5bc;
+    margin-right: 8px;
+    align-items: bottom;
+    font-family: "Comfortaa", cursive;
+}
+
+.dropdown select{
+    border-radius:30px;
+    /* display:inline-block; */
+    margin-top: 12px;
+    background:#cccccc;
+    border:1px solid #cccccc;
+    align-items: center;
+    font-size: 16px;
 }
 
 #search-button {
@@ -141,29 +179,11 @@ h2 {
     color: #eba374;
 }
 
-.dropdown {
-    color: #78c5bc;
-    margin-right: 8px;
-    align-items: bottom;
-    font-family: "Comfortaa", cursive;
-}
-
-.dropdown select{
-    border-radius:30px;
-    /* display:inline-block; */
-    margin-top: 12px;
-    background:#cccccc;
-    border:1px solid #cccccc;
-    align-items: center;
-    font-size: 16px;
-}
-
 .fact-panel {
     color: #78c5bc;
     border: 1px solid #ccc;
     border-radius: 30px;
     padding: 10px;
-     /* Adjust the width as needed */
     box-sizing: border-box;
     font-family: "Comfortaa", cursive;
     margin-right: 5px;
@@ -186,14 +206,21 @@ h2 {
 
 .social-media {
     box-sizing: border-box;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     color:#519be6;
     font-family: "Comfortaa", cursive;
     font-size:22px;
     text-align: center;
-    width: 400px;
     height: 150px;
-    float: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.social-media-icons img{
+    margin-top: 20px;
+    width: 70px;
+    height: 70px;
 }
 
 #adopt-here {
@@ -201,7 +228,7 @@ h2 {
     font-family: "Comfortaa", cursive;
     font-size: 22px;
     text-align: center;
-    width: 400px;
+    width: 100%;
     height: 200px;
     float: left;
 }
@@ -235,7 +262,6 @@ h2 {
     font-family: "Comfortaa", cursive;
 }
 
-
 .result-box {
     display: flex;
     align-items: left;
@@ -244,10 +270,6 @@ h2 {
     border-radius: 30px;
     margin: 10px 0;
 }
-
-#container {
-    margin-bottom: 8px;
-  }
 
 .image-section {
     flex: none; /* Don't allow the image section to grow */
@@ -269,30 +291,5 @@ h2 {
 }
 
 .facts-section p{
-    margin: 0.5em 0; 
+    margin: 0.2em 0; 
 }
-
-.jumbotron {
-    background-color: rgb(43, 107, 98) !important;
-}
-
-h3 {
-    color: #78c5bc;
-    font-family: "Comfortaa", cursive;
-}
-
-
-
-.container {
-    max-width: 1280px;
-    align-items: center;
-  }
-
-#info-bar {
-    align-content: center;
-}
-
-
-
-  
-
