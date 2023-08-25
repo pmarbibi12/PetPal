@@ -5,6 +5,7 @@
     /* Reset container's max-width for full-width layout */
     .container {
         max-width: 100%;
+        display: block;
     }
 
     /* Center-align jumbotron text */
@@ -45,26 +46,30 @@
 
     /* Center-align social-media icons */
     .social-media {
-        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
         width: 100%;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8); /* Add a semi-transparent background for better visibility */
+        color: #fff; /* White text color */
+        text-align: center;
     }
 
     /* Modify image-section for better image display */
-    .image-section {
-        width: 100%;
-        max-height: none;
-        padding: 0;
+    .image-section,
+    .facts-section {
+        width: 100%; /* Take full width of the result-box */
+        max-height: none; /* Allow elements to adjust height */
+        padding: 10px; /* Add padding for spacing */
     }
 
     /* Adjust spacing for result-box */
     .result-box {
-        margin: 10px 0;
+       flex-direction: column;
     }
 
     /* Adjust facts-section padding */
-    .facts-section {
-        padding: 5px;
-    }
 
     /* Center-align adopt-here section */
     #adopt-here {
