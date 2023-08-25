@@ -32,7 +32,7 @@
     }
 
     /* Full width for left-column and results sections */
-    .left-column,
+
     #results {
         width: 100%;
         margin: 10px 0;
@@ -45,7 +45,7 @@
 
     /* Center-align social-media icons */
     .social-media {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
@@ -55,18 +55,26 @@
         text-align: center;
     }
 
-    /* Modify image-section for better image display */
+
+    .left-column {
+        width: 100%;
+        order: 1; /* Change order to stack above results */
+    }
+
+    /* Stack image-section above facts-section within result-box */
+    .result-box {
+        flex-direction: column;
+    }
+    
     .image-section,
     .facts-section {
-        width: 100%; /* Take full width of the result-box */
-        max-height: none; /* Allow elements to adjust height */
-        padding: 10px; /* Add padding for spacing */
+        width: 100%;
+        padding: 10px;
+        order: 2; /* Change order to stack image-section above facts-section */
     }
 
     /* Adjust spacing for result-box */
-    .result-box {
-       flex-direction: column;
-    }
+    
 
     /* Adjust facts-section padding */
 
