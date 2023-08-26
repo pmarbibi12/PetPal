@@ -1,99 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-/* Adjustments for mobile devices */
-@media (max-width: 768px) {
-    /* Reset container's max-width for full-width layout */
-    .container {
-        display: block;
-    }
 
-    /* Center-align jumbo r tron text */
-    .jumbotron {
-        text-align: center;
-       order: 1;
-    }
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
-    /* Stack elements vertically in filter-bar */
-    .filter-bar {
-        flex-direction: column;
-        align-items: center;
-    }
+.loading-content {
+    width: 60%; /* Set the width to 100% of the viewport */
+    height: 60%; /* Set the height to 100% of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    /* Modify search-button styles for better display */
-    #search-button {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    /* Adjust spacing for adopt-here section */
-    #adopt-here {
-        margin-top: 20px;
-    }
-
-    /* Full width for left-column and results sections */
-    .left-column,
-    #results {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    /* Stack image-section above facts-section within result-box */
-    .result-box {
-        flex-direction: column;
-    }
-    
-    .image-section,
-    .facts-section {
-        width: 100%;
-        padding: 10px;
-        order: 2; /* Change order to stack image-section above facts-section */
-    }
-
-    /* Stack sections according to the specified order */
-    .social-media {
-        order: 2; /* Move social media after Jumbotron */
-    }
-
-    .info-bar {
-        order: 3; /* Move Info bar after social media */
-    }
-
-    .filter-bar {
-        order: 4; /* Keep Filter bar as it is */
-    }
-
-    .left-column {
-        order: 5; /* Keep Left column as it is */
-    }
-
-    #results {
-        order: 6; /* Keep Results as it is */
-    }
-
-    .sticky {
-        order: 7; /* Keep Ready to adopt as it is */
-    }
-
-    /* Center-align adopt-here section */
-    #adopt-here {
-        text-align: center;
-    }
-
-    /* Adjust sticky positioning for adopt-here */
-    .sticky {
-        position: static;
-    }
-
-    /* Modify pagination button styles for better display */
-    #pagination button {
-        width: auto;
-        margin: 5px;
-    }
-
-    /* Adjust spacing for fact-content elements */
-    #fact-content li,
-    #fact-content p {
-        margin-bottom: 5px;
-    }
+/* Set the embedded GIF to cover the entire screen */
+.loading-content iframe {
+    width: 100vw; /* 100% of the viewport width */
+    height: 100vh; /* 100% of the viewport height */
 }
 
 
@@ -293,3 +224,112 @@ h3 {
 .facts-section p{
     margin: 0.2em 0; 
 }
+
+@media (max-width: 768px) {
+    /* Reset container's max-width for full-width layout */
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .jumbotron {
+        text-align: center;
+        order: 1;
+    }
+  
+    /* Stack sections according to the specified order */
+
+
+    #info-bar {
+        order: 2;
+        text-align: center;
+        width: 100%;
+    }
+
+
+    .filter-bar {
+        flex-direction: column;
+        order: 3;
+        width: 100%;
+    }
+
+
+    #search-button {
+        width: 50%;
+        margin-top: 10px;
+    }
+
+    #results {
+        order: 4; /* Keep Results as it is */
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .result-box {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .image-section {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        order: 1; /* Change order to stack image-section above facts-section */
+    }
+    .facts-section {
+        display: block;
+        flex: none;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        order: 2; /* Change order to stack image-section above facts-section */
+    }
+
+    .left-column {
+        order: 5; /* Keep Left column as it is */
+        width: 100%;
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sticky {
+        order: 1;
+        width: 100%;
+        position: static;
+    }
+
+    #adopt-here {
+        text-align: center;
+        width: 100%;
+    }
+
+    .fact-panel {
+        order: 2;
+    }
+
+    .graphs {
+        width: 100%;
+    }
+
+    .social-media {
+        order: 3; /* Move social media after Jumbotron */
+    }
+
+    /* Modify pagination button styles for better display */
+    #pagination button {
+        width: auto;
+        margin: 5px;
+    }
+
+    /* Adjust spacing for fact-content elements */
+    #fact-content li,
+    #fact-content p {
+        margin-bottom: 5px;
+    }
+}
+
+
+
+  
+
