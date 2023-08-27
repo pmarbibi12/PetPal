@@ -30,17 +30,22 @@ function createSecondMenu() {
     let bar = d3.select("#selection-bar2");
     
     // Adding the label
-    bar.append("label")
+    bar.append("div")
+        .attr("id", "first-set");
+
+    let firstSet = d3.select("#first-set");
+
+    firstSet.append("label")
         .attr("for", "categories")
         .text("Categories: ");
     
-    bar.append("select")
+    firstSet.append("select")
         .attr("id", "categories");
     
-    bar.append("label")
+    firstSet.append("label")
         .attr("for", "cross-categories")
         .text("Cross Categories: ");
-    bar.append("select")
+    firstSet.append("select")
         .attr("id", "cross-categories");
         
     
@@ -51,6 +56,7 @@ function createSecondMenu() {
     addCat(crossDropdown);
 
     crossDropdown.on("change", function() {
+
         createSub();
     });
   
@@ -66,14 +72,19 @@ function createSub() {
 
     let subDropdown = d3.select("#selection-bar2")
 
+    subDropdown.append("div")
+        .attr("id", "second-set");
+
+    let secondSet = d3.select("#second-set")
+
 
     if (choice != catChoice) {
-        subDropdown.append("label")
+        secondSet.append("label")
             .attr("for", "sub-dropdown")
             .attr("id", "sub-label")
             .text("Sub-Category: ");
 
-        subDropdown.append("select")
+        secondSet.append("select")
             .attr("id", "sub-dropdown");
 
         if (choice == "animal_type") {
@@ -125,13 +136,12 @@ function createSub() {
             });  
         }
     }
-    d3.select("#selection-bar2")
+    d3.select("#second-set")
         .append("button")
         .attr("id", "make-graph-button")
         .text("Make Graph")
         .on("click", createGraph);
     
-    adjustStylesBasedOnDropdowns();
 }
 
 function sexChange(sex) {  
@@ -569,25 +579,5 @@ function addResetButton() {
         .on("click", resetPage);
 }
 
-function adjustStylesBasedOnDropdowns() {
-    let numDropdowns = document.querySelectorAll('#selection-bar2 select').length;
 
-    // Calculate font size for labels and buttons based on available space
-    let fontSize = Math.max(1.5, 5 - numDropdowns * 0.5); // Limit font size to a reasonable range
-
-    let labels = document.querySelectorAll('#selection-bar2 label');
-    labels.forEach(label => {
-        label.style.fontSize = fontSize * 0.25 + 'vw'; // Adjust the formula as needed
-    });
-
-    let buttons = document.querySelectorAll('#selection-bar2 button');
-    buttons.forEach(button => {
-        button.style.fontSize = fontSize * 0.2 + 'vw'; // Adjust the formula as needed
-    });
-
-    let dropdowns = document.querySelectorAll('#selection-bar2 select');
-    dropdowns.forEach(dropdown => {
-        dropdown.style.fontSize = fontSize * 0.2 + 'vw'; // Adjust the formula as needed
-    });
-}
 
