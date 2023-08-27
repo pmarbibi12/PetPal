@@ -120,7 +120,6 @@
     overflow: hidden;
 }
 
-<<<<<<< HEAD
 @media (max-width: 768px) {
     .container {
         display: flex;
@@ -168,5 +167,3 @@
     }
 
 }
-=======
->>>>>>> eac09d84ca1e88fee1056ebea04501cf8c58077b
