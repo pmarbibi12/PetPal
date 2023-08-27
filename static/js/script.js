@@ -129,10 +129,10 @@ function createPaginationControls(results, currentPage) {
 
 
 function performSearch() {
-    const intakeType = document.getElementById('intake-type').value;
-    const petType = document.getElementById('pet-type').value;
-    const size = document.getElementById('size').value;
-    const sex = document.getElementById('sex').value;
+    let intakeType = document.getElementById('intake-type').value;
+    let petType = document.getElementById('pet-type').value;
+    let size = document.getElementById('size').value;
+    let sex = document.getElementById('sex').value;
     searchClicked(intakeType, petType, size, sex);
 }
 

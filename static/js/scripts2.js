@@ -12,13 +12,13 @@ function clearBar(choice) {
     else if (choice == "Bar"){
         bar.append("button")
             .attr("class", "button")
-            .attr("id", "pie",)
+            .attr("id", "bar",)
             .text("Bar");
     }
     if (choice == "Line"){
         bar.append("button")
             .attr("class", "button")
-            .attr("id", "pie",)
+            .attr("id", "line",)
             .text("Line");
     }
     createSecondMenu();
@@ -212,9 +212,9 @@ function makePie() {
 
         if (selectedCategory === selectedCross || (selectedCategory === "animal_type" && selectedCross === "breed")) {
         // In these cases, just count occurrences of selectedCategory
-            const categoryCounts = {};
+            let categoryCounts = {};
             filteredData.forEach(item => {
-                const categoryValue = item[selectedCategory];
+                let categoryValue = item[selectedCategory];
                 if (!categoryCounts[categoryValue]) {
                     categoryCounts[categoryValue] = 1;
                 } else {
@@ -222,17 +222,17 @@ function makePie() {
                 }
             });
 
-            const categoryLabels = Object.keys(categoryCounts);
-            const categoryValues = Object.values(categoryCounts);
+            let categoryLabels = Object.keys(categoryCounts);
+            let categoryValues = Object.values(categoryCounts);
 
             // Create Pie chart using Plotly
-            const pieData = [{
+            let pieData = [{
                 labels: categoryLabels,
                 values: categoryValues,
                 type: "pie"
             }];
 
-            const pieLayout = {
+            let pieLayout = {
                 title: {
                     text:`${toText(selectedCategory)} Distribution`,
                     font: {
@@ -255,11 +255,11 @@ function makePie() {
         // In this case, count occurrences of selectedCategory within the subset of selectedCross
             let selectedSub = d3.select('#sub-dropdown').property("value");
             console.log("selectedSub", selectedSub); 
-            const crossCategoryCounts = {};
+            let crossCategoryCounts = {};
             filteredData = filteredData.filter(item => item[selectedCross] === selectedSub);
 
             filteredData.forEach(item => {
-                const crossCategoryValue = item[selectedCategory];
+                let crossCategoryValue = item[selectedCategory];
                 if (!crossCategoryCounts[crossCategoryValue]) {
                     crossCategoryCounts[crossCategoryValue] = 1;
                 } else {
@@ -267,17 +267,17 @@ function makePie() {
                 }
             });
 
-            const crossCategoryLabels = Object.keys(crossCategoryCounts);
-            const crossCategoryValues = Object.values(crossCategoryCounts);
+            let crossCategoryLabels = Object.keys(crossCategoryCounts);
+            let crossCategoryValues = Object.values(crossCategoryCounts);
 
             // Create Pie chart using Plotly
-            const pieData = [{
+            let pieData = [{
                 labels: crossCategoryLabels,
                 values: crossCategoryValues,
                 type: "pie"
             }];
 
-            const pieLayout = {
+            let pieLayout = {
                 title: {
                     text: `${toText(selectedCategory)} Distribution for ${toText(selectedCross)} "${selectedSub}"`,
                     font: {
@@ -315,9 +315,9 @@ function makeBar() {
 
         if (selectedCategory === selectedCross || (selectedCategory === "animal_type" && selectedCross === "breed")) {
             // In these cases, just count occurrences of selectedCategory
-            const categoryCounts = {};
+            let categoryCounts = {};
             filteredData.forEach(item => {
-                const categoryValue = item[selectedCategory];
+                let categoryValue = item[selectedCategory];
                 if (!categoryCounts[categoryValue]) {
                     categoryCounts[categoryValue] = 1;
                 } else {
@@ -325,11 +325,11 @@ function makeBar() {
                 }
             });
 
-            const categoryLabels = Object.keys(categoryCounts);
-            const categoryValues = Object.values(categoryCounts);
+            let categoryLabels = Object.keys(categoryCounts);
+            let categoryValues = Object.values(categoryCounts);
 
             // Create Bar chart using Plotly
-            const barData = [{
+            let barData = [{
                 x: categoryLabels,
                 y: categoryValues,
                 type: "bar",
@@ -338,7 +338,7 @@ function makeBar() {
                 }
             }];
 
-            const barLayout = {
+            let barLayout = {
                 title: {
                     text: `${toText(selectedCategory)} Distribution`,
                     font: {
@@ -361,11 +361,11 @@ function makeBar() {
             // In this case, count occurrences of selectedCategory within the subset of selectedCross
             let selectedSub = d3.select('#sub-dropdown').property("value");
             console.log("selectedSub", selectedSub); 
-            const crossCategoryCounts = {};
+            let crossCategoryCounts = {};
             filteredData = filteredData.filter(item => item[selectedCross] === selectedSub);
 
             filteredData.forEach(item => {
-                const crossCategoryValue = item[selectedCategory];
+                let crossCategoryValue = item[selectedCategory];
                 if (!crossCategoryCounts[crossCategoryValue]) {
                     crossCategoryCounts[crossCategoryValue] = 1;
                 } else {
@@ -373,11 +373,11 @@ function makeBar() {
                 }
             });
 
-            const crossCategoryLabels = Object.keys(crossCategoryCounts);
-            const crossCategoryValues = Object.values(crossCategoryCounts);
+            let crossCategoryLabels = Object.keys(crossCategoryCounts);
+            let crossCategoryValues = Object.values(crossCategoryCounts);
 
             // Create Bar chart using Plotly
-            const barData = [{
+            let barData = [{
                 x: crossCategoryLabels,
                 y: crossCategoryValues,
                 type: "bar",
@@ -386,7 +386,7 @@ function makeBar() {
                 }
             }];
 
-            const barLayout = {
+            let barLayout = {
                 title: {
                     text: `${toText(selectedCategory)} Distribution for ${toText(selectedCross)} "${selectedSub}"`,
                     font: {
@@ -423,9 +423,9 @@ function makeLine() {
         let filteredData = data;
 
         if (selectedCategory === selectedCross || (selectedCategory === "animal_type" && selectedCross === "breed")) {
-            const categoryCounts = {};
+            let categoryCounts = {};
             filteredData.forEach(item => {
-                const categoryValue = item[selectedCategory];
+                let categoryValue = item[selectedCategory];
                 if (!categoryCounts[categoryValue]) {
                     categoryCounts[categoryValue] = 1;
                 } else {
@@ -433,11 +433,11 @@ function makeLine() {
                 }
             });
 
-            const categoryLabels = Object.keys(categoryCounts);
-            const categoryValues = Object.values(categoryCounts);
+            let categoryLabels = Object.keys(categoryCounts);
+            let categoryValues = Object.values(categoryCounts);
 
             // Create Line chart using Plotly
-            const lineData = [{
+            let lineData = [{
                 x: categoryLabels,
                 y: categoryValues,
                 type: "scatter",
@@ -451,7 +451,7 @@ function makeLine() {
                 }
             }];
 
-            const lineLayout = {
+            let lineLayout = {
                 title: {
                     text: `${toText(selectedCategory)} Distribution`,
                     font: {
@@ -473,11 +473,11 @@ function makeLine() {
         else {
             let selectedSub = d3.select('#sub-dropdown').property("value");
             console.log("selectedSub", selectedSub); 
-            const crossCategoryCounts = {};
+            let crossCategoryCounts = {};
             filteredData = filteredData.filter(item => item[selectedCross] === selectedSub);
 
             filteredData.forEach(item => {
-                const crossCategoryValue = item[selectedCategory];
+                let crossCategoryValue = item[selectedCategory];
                 if (!crossCategoryCounts[crossCategoryValue]) {
                     crossCategoryCounts[crossCategoryValue] = 1;
                 } else {
@@ -485,11 +485,11 @@ function makeLine() {
                 }
             });
 
-            const crossCategoryLabels = Object.keys(crossCategoryCounts);
-            const crossCategoryValues = Object.values(crossCategoryCounts);
+            let crossCategoryLabels = Object.keys(crossCategoryCounts);
+            let crossCategoryValues = Object.values(crossCategoryCounts);
 
             // Create Line chart using Plotly
-            const lineData = [{
+            let lineData = [{
                 x: crossCategoryLabels,
                 y: crossCategoryValues,
                 type: "scatter",
@@ -503,7 +503,7 @@ function makeLine() {
                 }
             }];
 
-            const lineLayout = {
+            let lineLayout = {
                 title: {
                     text: `${toText(selectedCategory)} Distribution for ${toText(selectedCross)} "${selectedSub}"`,
                     font: {
@@ -545,9 +545,9 @@ function createGraph() {
 }
 
 function getRandomColorArray(count) {
-    const colors = [];
+    let colors = [];
     for (let i = 0; i < count; i++) {
-        const shade = i * (255 / count);
+        let shade = i * (255 / count);
         colors.push(rgbToHex(255, Math.floor(shade), 0));
     }
     return colors;
@@ -555,8 +555,8 @@ function getRandomColorArray(count) {
 
 // Function to generate a random color
 function rgbToHex(r, g, b) {
-    const componentToHex = (c) => {
-        const hex = c.toString(16);
+    let componentToHex = (c) => {
+        let hex = c.toString(16);
         return hex.length === 1 ? "0" + hex : hex;
     };
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
