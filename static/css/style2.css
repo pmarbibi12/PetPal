@@ -79,13 +79,16 @@
     font-size:22px;
     text-align: center;
     height: 150px;
-    width: 30%;
+    width: 40%;
+    padding-top: 20px;
     box-sizing: border-box;
-    margin-right: 20px;
 }
 .social-media-icons2 img{
     width: 50px;
     height: 50px;
+}
+.glide.glide--ltr.glide--carousel.glide--swipeable {
+    padding-top: 5px;
 }
 
 #socials-and-links {
@@ -97,10 +100,23 @@
     justify-content: center;
     box-sizing: border-box;
     font-family: "Comfortaa", cursive;
-    font-size: 25px;
     color: #c9899d;
 }
 
 #adopt-here2 {
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
 }
+
+#adopt-here2 p{
+    font-size: 70;
+}
+
+#adopt-here2 img{
+    margin-top: -20px;
+    overflow: hidden;
+}
+
