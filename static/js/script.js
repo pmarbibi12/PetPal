@@ -107,6 +107,7 @@ function createPaginationControls(results, currentPage) {
             .on("click", () => {
                 if (currentPage > 1) {
                     displayResults(results, currentPage - 1);
+                    window.scrollTo(0, 0);
                 }
             });
 
@@ -114,7 +115,10 @@ function createPaginationControls(results, currentPage) {
             paginationContainer.append("button")
                 .text(i)
                 .classed("active", i === currentPage)
-                .on("click", () => displayResults(results, i));
+                .on("click", () => {
+                    displayResults(results, i);
+                    window.scrollTo(0, 0);
+                });
         }
 
         let nextButton = paginationContainer.append("button")
@@ -122,6 +126,7 @@ function createPaginationControls(results, currentPage) {
             .on("click", () => {
                 if (currentPage < totalPages) {
                     displayResults(results, currentPage + 1);
+                    window.scrollTo(0, 0);
                 }
             });
     }

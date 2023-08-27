@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 .loading-overlay {
     position: fixed;
     top: 0;
@@ -51,8 +57,9 @@ h3 {
 .container {
     max-width: 1280px;
     align-items: center;
-  }
+}
 
+  
 
 #info-bar {
     align-content: center;
@@ -134,10 +141,10 @@ h3 {
     margin-bottom: 10px; /* Add space between each bullet point */
 }
 #fact-content u {
-    color: #c9899d;; /* Change the color of underlined text */
+    color: #c9899d; /* Change the color of underlined text */
 }
 #fact-content b {
-    color: #c9899d;; /* Change the color of bold text */
+    color: #c9899d; /* Change the color of bold text */
 }
 
 .social-media {
