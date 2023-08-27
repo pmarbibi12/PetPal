@@ -137,13 +137,7 @@ function performSearch() {
 }
 
 function searchClicked(intakeType, petType, size, sex) {
-    // Handle the logic using the selected choices
-    console.log("Intake Type:", intakeType);
-    console.log("Pet Type:", petType);
-    console.log("Size:", size);
-    console.log("Sex:", sex);
-    
-    
+
     function filterPet(pet) {
         let isMatch = true;  // Start with true and narrow down using conditions
         if (intakeType !== "") {
@@ -176,39 +170,39 @@ function searchClicked(intakeType, petType, size, sex) {
             paginationContainer.selectAll("*").remove();
         }
         else {
-        searchedResults.forEach(result => {
-            let resultBox = resultsList.append("div")
-            .attr("class", "result-box");
+        // searchedResults.forEach(result => {
+        //     let resultBox = resultsList.append("div")
+        //     .attr("class", "result-box");
 
-            // Create a div for the image section
-            let imageSection = resultBox.append("div")
-                .attr("class", "image-section");
+        //     // Create a div for the image section
+        //     let imageSection = resultBox.append("div")
+        //         .attr("class", "image-section");
 
-            // Create an image element within the image section
-            imageSection.append("img")
-                .attr("src", result.link)
-                .attr("alt", "Image");
+        //     // Create an image element within the image section
+        //     imageSection.append("img")
+        //         .attr("src", result.link)
+        //         .attr("alt", "Image");
 
-            // Create a div for the facts section
-            let factsSection = resultBox.append("div")
-                .attr("class", "facts-section");
+        //     // Create a div for the facts section
+        //     let factsSection = resultBox.append("div")
+        //         .attr("class", "facts-section");
 
             
-            // Populate the facts section with data
-            factsSection.append("p")
-                .html(
-                    `<p>Animal ID: ${result.animal_id}</p>
-                    <p>Name: ${result.name}</p>
-                    <p>Age: ${result.age}</p>
-                    <p>Animal Type: ${result.animal_type}</p>
-                    <p>Breed: ${result.breed}</p>
-                    <p>Color: ${result.color}</p>
-                    <p>Sex: ${sexChange(result.sex)}</p>
-                    <p>Size: ${result.size}</p>
-                    <p>Intake Type: ${result.intake_type}</p>
-                    <p>In Date: ${new Date(parseDate(result.in_date)).toLocaleDateString()}</p>`
-                    );
-            });
+        //     // Populate the facts section with data
+        //     factsSection.append("p")
+        //         .html(
+        //             `<p>Animal ID: ${result.animal_id}</p>
+        //             <p>Name: ${result.name}</p>
+        //             <p>Age: ${result.age}</p>
+        //             <p>Animal Type: ${result.animal_type}</p>
+        //             <p>Breed: ${result.breed}</p>
+        //             <p>Color: ${result.color}</p>
+        //             <p>Sex: ${sexChange(result.sex)}</p>
+        //             <p>Size: ${result.size}</p>
+        //             <p>Intake Type: ${result.intake_type}</p>
+        //             <p>In Date: ${new Date(parseDate(result.in_date)).toLocaleDateString()}</p>`
+        //             );
+        //     });
 
         displayResults(searchedResults, 1)
         };

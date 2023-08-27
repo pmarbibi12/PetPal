@@ -16,7 +16,6 @@ function intakePieGraph(data) {
         }
     }
 
-    console.log("intakeTypes",intakeTypes)
 
     let pieChartData = {
         labels: Object.keys(intakeTypes),
@@ -58,7 +57,6 @@ function petPopularityChart(data) {
         }
     }
 
-    console.log("animalTypes",animalTypes)
 
     let barChartData = [{
         x: Object.values(animalTypes),
@@ -122,7 +120,6 @@ function makeDonut(data) {
     let sortedBreedData = Object.keys(breedData).sort((a, b) => breedData[b] - breedData[a]);
     let top5Breeds = sortedBreedData.slice(0, 5);
 
-    console.log("breedData",top5Breeds)
 
     let donutChartData = [{
         labels: top5Breeds,
@@ -151,92 +148,92 @@ function makeDonut(data) {
 
 }
 
-function petSize(petType, size) {
+// function petSize(petType, size) {
 
-    d3.json("/api/get_data").then( function(data) {
+//     d3.json("/api/get_data").then( function(data) {
 
 
-        let dogCount = 0;
-        let catCount = 0;
-        let otherCount = 0;
+//         let dogCount = 0;
+//         let catCount = 0;
+//         let otherCount = 0;
 
-        let catSize = 0;
-        let dogSize = 0;
-        let otherSize = 0;
+//         let catSize = 0;
+//         let dogSize = 0;
+//         let otherSize = 0;
 
-        for (let i = 0; i<petType.length; i++){
+//         for (let i = 0; i<petType.length; i++){
 
-            if (petType === "Cat" && size === "toy") {
-                catSize += 1;
-            } else if (petType === "Cat" && size === "small") {
-                catSize += 2;
-            } else if (petType === "Cat" && size === "med") {
-                catSize += 3;
-            } else if (petType === "Cat" && size === "lar") {
-                catSize += 4;
-            };
+//             if (petType === "Cat" && size === "toy") {
+//                 catSize += 1;
+//             } else if (petType === "Cat" && size === "small") {
+//                 catSize += 2;
+//             } else if (petType === "Cat" && size === "med") {
+//                 catSize += 3;
+//             } else if (petType === "Cat" && size === "lar") {
+//                 catSize += 4;
+//             };
 
-            if (petType === "Dog" && size === "toy") {
-                dogSize += 1;
-            } else if (petType === "Dog" && size === "small") {
-                dogSize += 2;
-            } else if (petType === "Dog" && size === "med") {
-                dogSize += 3;
-            } else if (petType === "Dog" && size === "lar") {
-                dogSize += 4;
-            };
+//             if (petType === "Dog" && size === "toy") {
+//                 dogSize += 1;
+//             } else if (petType === "Dog" && size === "small") {
+//                 dogSize += 2;
+//             } else if (petType === "Dog" && size === "med") {
+//                 dogSize += 3;
+//             } else if (petType === "Dog" && size === "lar") {
+//                 dogSize += 4;
+//             };
 
-            if (petType === "Other" && size === "toy") {
-                otherSize += 1;
-            } else if (petType === "Other" && size === "small") {
-                otherSize += 2;
-            } else if (petType === "Other" && size === "med") {
-                otherSize += 3;
-            } else if (petType === "Other" && size === "lar") {
-                otherSize += 4;
-            };
+//             if (petType === "Other" && size === "toy") {
+//                 otherSize += 1;
+//             } else if (petType === "Other" && size === "small") {
+//                 otherSize += 2;
+//             } else if (petType === "Other" && size === "med") {
+//                 otherSize += 3;
+//             } else if (petType === "Other" && size === "lar") {
+//                 otherSize += 4;
+//             };
 
-            if (petType === "Dog") {
-                dogCount += 1
-            };
-            if (petType === "Cat") {
-                catCount += 1
-            };
-            if (petType === "Other") {
-                otherCount += 1
-            };
+//             if (petType === "Dog") {
+//                 dogCount += 1
+//             };
+//             if (petType === "Cat") {
+//                 catCount += 1
+//             };
+//             if (petType === "Other") {
+//                 otherCount += 1
+//             };
 
-            avgDog = dogSize/dogCount;
-            avgCat = catSize/catCount;
-            avgOther = otherSize/otherCount;
+//             avgDog = dogSize/dogCount;
+//             avgCat = catSize/catCount;
+//             avgOther = otherSize/otherCount;
 
-            sizeArray = [avgDog, avgCat, avgOther];
+//             sizeArray = [avgDog, avgCat, avgOther];
 
-            animalArray = ["Dog", "Cat", "Other"];
+//             animalArray = ["Dog", "Cat", "Other"];
 
-            let trace = {
-                x: animalArray,
-                y: sizeArray,
-                mode: "markers",
-                marker: {
-                    size: sizeArray,
-                    color: otuIds.map(function(i) {
-                        return '#' + i;
-                    }),
+//             let trace = {
+//                 x: animalArray,
+//                 y: sizeArray,
+//                 mode: "markers",
+//                 marker: {
+//                     size: sizeArray,
+//                     color: otuIds.map(function(i) {
+//                         return '#' + i;
+//                     }),
 
-                },
-            };
+//                 },
+//             };
 
-            let layout = {
-                xaxis: {
-                    title: "Pet Sizes",
-                    margin: { t: 0, r: 25, l: 100, b: 50 },
-                },
-            };
+//             let layout = {
+//                 xaxis: {
+//                     title: "Pet Sizes",
+//                     margin: { t: 0, r: 25, l: 100, b: 50 },
+//                 },
+//             };
 
-            Plotly.newPlot("bubble", [trace], layout);
+//             Plotly.newPlot("bubble", [trace], layout);
 
-        };
+//         };
 
-    });
-};
+//     });
+// };

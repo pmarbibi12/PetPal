@@ -81,6 +81,10 @@ session.close()
 def index():
     return render_template('index.html')
 
+@app.route('/data_visualization')
+def data_visualization():
+    return render_template('visualizations.html')
+
 @app.route('/api/get_data')
 def get_data():
     session = Session()
@@ -175,6 +179,18 @@ def pet_intake_type():
             unique_intake_type.append(result)
     session.close()
     return unique_intake_type
+
+@app.route('/api/breed')
+def breed():
+    session = Session()
+    results = session.query(RowData.breed)
+    results_list = [row[0] for row in results]
+    unique_breed= []
+    for result in results_list:
+        if result not in unique_breed:
+            unique_breed.append(result)
+    session.close()
+    return unique_breed
 
 
 

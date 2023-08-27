@@ -121,6 +121,11 @@ h3 {
     margin-bottom: 10px;
 }
 
+.graphs {
+    width: 100%;
+    padding: 10 px;
+}
+
 #fact-content {
     padding: 10px;
     color: #eba374;
@@ -224,6 +229,15 @@ h3 {
 .facts-section p{
     margin: 0.2em 0; 
 }
+
+.data-visualizations-link {
+    display: block; /* Make the link a block element to center the text */
+    text-align: center; /* Center the text within the block */
+    font-size: 24px; /* Set the font size to 24px */
+    color: #c9899d; /* Set the color to the specified value */
+}
+
+
 
 @media (max-width: 768px) {
     /* Reset container's max-width for full-width layout */

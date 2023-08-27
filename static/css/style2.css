@@ -1,0 +1,106 @@
+#selection-bar {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: "Comfortaa", cursive;
+    font-size: 18px;
+}
+
+#selection-bar button {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+#selection-bar2 {
+    display: flex;
+    flex-direction: row; 
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: "Comfortaa", cursive;
+    font-size: 18px;
+    width: 100%;
+    margin: 15px;
+}
+
+#selection-bar2 select{
+    margin: 10px;
+    border-radius: 8px;
+}
+
+#selection-bar2 label{
+    color: #78c5bc;
+}
+
+#selection-bar2 button{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+#reset-section {
+    display: flex;
+    flex-direction: row; 
+    border-radius: 30px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: "Comfortaa", cursive;
+    font-size: 18px;
+    margin: 15px;
+}
+
+#reset-section button{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+.social-media2 {
+    box-sizing: border-box;
+    color:#519be6;
+    font-family: "Comfortaa", cursive;
+    font-size:22px;
+    text-align: center;
+    height: 150px;
+    width: 30%;
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+.social-media-icons2 img{
+    width: 50px;
+    height: 50px;
+}
+
+#socials-and-links {
+    display: flex;
+    flex-direction: row; 
+    border-radius: 30px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: "Comfortaa", cursive;
+    font-size: 25px;
+    color: #c9899d;
+}
+
+#adopt-here2 {
+    margin-left: 20px;
+}
